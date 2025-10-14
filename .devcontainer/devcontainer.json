@@ -1,0 +1,35 @@
+{
+  "name": "C++ DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "dev",
+  "workspaceFolder": "/home/dev/project",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/home/dev/project,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.makefile-tools",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "twxs.cmake",
+        "xaver.clang-format"
+      ],
+      "settings": {
+        "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+        "C_Cpp.clang_format_style": "Google",
+        "makefile.configureOnOpen": true
+      }
+    }
+  },
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
+  "forwardPorts": [2345]
+}
