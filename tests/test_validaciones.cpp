@@ -3,7 +3,7 @@
 #include "ValidInput.h"
 #include "ValidacionTelefonos.h"
 
-// ⚙️ Prueba: creación manual de un Donor y validación de sus datos
+// Prueba: creación manual de un Donor y validación de sus datos
 TEST(DonorTest, ManualObjectCreation) {
     Donor d;
     d.setDonorId(101);
@@ -27,7 +27,7 @@ TEST(DonorTest, ManualObjectCreation) {
     EXPECT_EQ(d.getDate(), "12/10/2024");
 }
 
-// ⚙️ Prueba: validaciones de entrada (sin necesidad de consola)
+// Prueba: validaciones de entrada (sin necesidad de consola)
 TEST(ValidInputTest, ValidateIntRange) {
     // Simulación lógica: rango de edad válido
     int edad = 25;
@@ -43,7 +43,7 @@ TEST(ValidInputTest, ValidatePhoneNumberLength) {
     EXPECT_EQ(telefonoStr[0], '3'); // Los celulares colombianos empiezan por 3
 }
 
-// ⚙️ Prueba: validación con formato de fecha DD/MM/AAAA
+// Prueba: validación con formato de fecha DD/MM/AAAA
 TEST(ValidInputTest, ValidateDateFormat) {
     std::string fecha = "05/09/2024";
 
@@ -55,7 +55,7 @@ TEST(ValidInputTest, ValidateDateFormat) {
     EXPECT_TRUE(std::isdigit(fecha[6]) && std::isdigit(fecha[9]));
 }
 
-// ⚙️ Prueba: validación de número con la clase PhoneValidator
+// Prueba: validación de número con la clase PhoneValidator
 // (solo testea que el método se ejecuta, sin requerir conexión)
 TEST(PhoneValidatorTest, ValidateNumberOfflineMock) {
     long long telefono = 3216549870;
