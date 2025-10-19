@@ -60,7 +60,7 @@ TEST(ValidInputTest, ValidateDateFormat) {
 TEST(PhoneValidatorTest, ValidateNumberOfflineMock) {
     long long telefono = 3216549870;
     bool valido = PhoneValidator::validate(telefono);
-    // ⚠️ En modo sin conexión podría devolver false, pero el test asegura que la función responde.
+    // En modo sin conexión podría devolver false, pero el test asegura que la función responde.
     EXPECT_TRUE(valido || !valido);
 }
 
